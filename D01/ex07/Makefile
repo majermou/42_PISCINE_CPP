@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/14 18:06:10 by majermou          #+#    #+#              #
-#    Updated: 2021/06/08 17:22:08 by majermou         ###   ########.fr        #
+#    Created: 2021/06/08 17:13:24 by majermou          #+#    #+#              #
+#    Updated: 2021/06/08 17:23:06 by majermou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = replace
 
 CC = clang++
 
@@ -18,19 +18,19 @@ flags = -std=c++98 -Wall -Wextra -Werror
 
 SRC = ${NAME}.cpp
 
-OBJECTS = ${NAME}.o
+OBJECT = ${NAME}.o
 
 all: ${NAME}
 
-${NAME}:${OBJECTS}
+${NAME}:${OBJECT}
 		@${CC} $< -o $@
-		@echo "\033[0;32mmegaphone Successfully Created."
-
+		@echo "\033[0;32mreplace Successfully Created."
+	
 %.o: %.cpp
 		@${CC} ${flags} -o $@ -c $<
-		
+
 clean:
-		@rm -rf ${OBJECTS}
+		@rm -rf ${OBJECT}
 		@echo "\033[0;31mRemoving Objects..."
 
 fclean: clean
