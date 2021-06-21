@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 16:18:18 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/12 19:48:25 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/19 13:50:01 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ Fixed::Fixed(int const num): raw_bits(num << 8)
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float const real_num)
+Fixed::Fixed(float const real_num): raw_bits(roundf(real_num * (1 << nbr_fractionalbits)))
 {
     std::cout << "Float constructor called" << std::endl;
-    float x = real_num;
-    for (size_t i = 0; i < 8; i++)
-        x *= 2;
-    raw_bits = roundf(x);
 }
 
 Fixed::Fixed(Fixed const &src)
@@ -65,9 +61,7 @@ float   Fixed::toFloat(void) const
     float   ret;
 
     ret = raw_bits;
-    for (size_t i = 0; i < 8; i++)
-        ret /= 2;
-    return ret;   
+    return (ret / (1 << nbr_fractionalbits));
 }
 
 int     Fixed::toInt(void) const
