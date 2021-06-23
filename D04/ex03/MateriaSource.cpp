@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:02:17 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:53:20 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:07:26 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ MateriaSource::MateriaSource(void)
     materia = new AMateria*[4];
     for (size_t i = 0; i < 4; i++)
         materia[i] = NULL;
-    
 }
 
 MateriaSource::MateriaSource(MateriaSource const &copy)
 {
+    clean();
     *this = copy;
 }
 
@@ -34,13 +34,26 @@ MateriaSource&   MateriaSource::operator=(MateriaSource const &leftOperand)
 {
     if (this != &leftOperand)
     {
-        for (size_t i = 0; materia[i]; i++)
-            delete materia[i];
-        delete [] materia;
+       clean();
         materia = leftOperand.getMateria();
         idx= leftOperand.getIdx();
     }
     return *this;
+}
+
+void    MateriaSource::clean(void)
+{
+    int     i = 0;
+
+    while (materia && materia[i])
+    {
+        delete materia[i];
+        materia[i] = NULL;
+        i++;
+    }
+    delete [] materia;
+    materia = NULL;
+    
 }
 
 AMateria**  MateriaSource::getMateria(void) const

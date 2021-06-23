@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:55:12 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:36:19 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:55:16 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class AMateria
 
     public:
     
+        AMateria(void);
         AMateria(std::string const & type);
         AMateria(AMateria const &copy);
         AMateria&   operator=(AMateria const &leftOperand);

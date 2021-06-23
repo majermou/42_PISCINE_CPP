@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:35:27 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:31:34 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:01:58 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ Character::Character(std::string name)
 
 Character::Character(Character const &copy)
 {
-    for (size_t i = 0; materia[i]; i++)
-        delete materia[i];
-    delete [] materia;
+    clean();
     *this = copy;
 }
 
@@ -33,9 +31,7 @@ Character&  Character::operator=(Character const &leftOperand)
 {
     if (this != &leftOperand)
     {
-        for (size_t i = 0; materia[i]; i++)
-            delete materia[i];
-        delete [] materia;
+        clean();
         Name = leftOperand.getName();
         materia = leftOperand.getMateria();
         index = leftOperand.getIdx();
@@ -45,9 +41,22 @@ Character&  Character::operator=(Character const &leftOperand)
 
 Character::~Character(void)
 {
-    for (size_t i = 0; materia[i]; i++)
+    clean();
+}
+
+void    Character::clean(void)
+{
+    int     i = 0;
+
+    while (materia && materia[i])
+    {
         delete materia[i];
+        materia[i] = NULL;
+        i++;
+    }
     delete [] materia;
+    materia = NULL;
+    
 }
 
 AMateria**  Character::getMateria(void) const
@@ -71,13 +80,13 @@ void    Character::equip(AMateria* m)
     {
         materia[index] = m;
         index += 1;
-    } 
+    }
 }
 
 void    Character::unequip(int idx)
 {
     if (materia[idx])
-        materia[idx] = NULL;       
+        materia[idx] = NULL;
 }
 
 void    Character::use(int idx, ICharacter& target)

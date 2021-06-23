@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:04:40 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 15:27:56 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:58:35 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ Cure::~Cure(void)
 Cure&    Cure::operator=(Cure const &leftOperand)
 {
     if (this != &leftOperand)
-    {
         AMateria::operator=(leftOperand);
-    }
     return *this;
 }
 

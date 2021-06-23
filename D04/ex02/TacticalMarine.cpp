@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 10:51:17 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 12:10:25 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:15:58 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ TacticalMarine::~TacticalMarine(void)
     std::cout << "Aaargh..." << std::endl;
 }
 
-TacticalMarine& TacticalMarine::operator=(TacticalMarine const &leftOperand)
+TacticalMarine& TacticalMarine::operator=(TacticalMarine const &rightOperand)
 {
-    (void)leftOperand;
+    (void)rightOperand;
     return *this;
 }
 
 
 ISpaceMarine*   TacticalMarine::clone(void) const
 {
-    return (ISpaceMarine*)this;
+    return new TacticalMarine(*this);
 }
 
 void            TacticalMarine::battleCry(void) const

@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:56:54 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 18:32:40 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:59:13 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class SuperMutant: public Enemy
         SuperMutant(void);
         SuperMutant(SuperMutant const &copy);
         SuperMutant&  operator=(SuperMutant const &leftOperand);
-        ~SuperMutant();
+        virtual ~SuperMutant(void);
 
-        virtual void takeDamage(int damage);
+        void takeDamage(int damage);
 };
 
 #endif

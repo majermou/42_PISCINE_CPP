@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:08:03 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 12:28:01 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:40:03 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ AssaultTerminator::~AssaultTerminator(void)
     std::cout << "I’ll be back..." << std::endl;
 }
 
-AssaultTerminator& AssaultTerminator::operator=(AssaultTerminator const &leftOperand)
+AssaultTerminator& AssaultTerminator::operator=(AssaultTerminator const &rightOperand)
 {
-    (void)leftOperand;
+    (void)rightOperand;
     return *this;
 }
 
 
 ISpaceMarine*   AssaultTerminator::clone(void) const
 {
-    return (ISpaceMarine*)this;
+    return new AssaultTerminator(*this);
 }
 
 void            AssaultTerminator::battleCry(void) const

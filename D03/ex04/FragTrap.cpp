@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 15:53:15 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/16 19:26:33 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:00:35 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(void)
     max_hit_points = 100;
     melee_attack_damage = 30;
     ranged_attack_damage = 20;
-    armor_damage_reduction = 5;
+    armor_damage_reduction = 6;
                            
     std::cout << "ExMachina: Hey everybody! Check out my package!" << std::endl << std::endl;
 }
@@ -37,7 +37,7 @@ FragTrap::FragTrap(std::string name)
     max_hit_points = 100;
     melee_attack_damage = 30;
     ranged_attack_damage = 20;
-    armor_damage_reduction = 5;
+    armor_damage_reduction = 6;
     std::cout << _name << ": Let's get this party started!" <<   std::endl << std::endl;
 }
 

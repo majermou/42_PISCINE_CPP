@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:28:59 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:20:02 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:17:54 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ class Character: public ICharacter
     
     private:
     
+        void            clean(void);
         std::string     Name;
         AMateria**      materia;
         int             index;
             
 };
-
 
 #endif

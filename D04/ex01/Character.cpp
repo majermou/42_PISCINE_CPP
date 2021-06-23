@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:16:56 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 21:26:56 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 15:57:46 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void    Character::attack(Enemy *enemy)
     if (ptr && numAP >= ptr->getAPCost())
     {
         std::cout << Name << " attacks " << enemy->getType() << " with a " << ptr->getName() << std::endl;
-        numAP -= ptr->getAPCost();
+        if (numAP > ptr->getAPCost())
+            numAP -= ptr->getAPCost();
+        else
+            numAP = 0;
         ptr->attack();
         enemy->takeDamage(ptr->getDamage());
         if (!enemy->getHP())

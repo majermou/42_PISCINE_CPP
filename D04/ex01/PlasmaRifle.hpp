@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:20:33 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 15:23:51 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:51:39 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class PlasmaRifle: public AWeapon
         PlasmaRifle(void);
         PlasmaRifle(PlasmaRifle const & copy);
         PlasmaRifle&    operator=(PlasmaRifle const & leftOperand);
-        ~PlasmaRifle(void);
+        virtual ~PlasmaRifle(void);
 
-        virtual void attack(void) const;
+        void attack(void) const;
 };
 
 #endif

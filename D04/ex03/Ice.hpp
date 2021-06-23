@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 14:50:00 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:33:55 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:58:14 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Ice: public AMateria
         Ice(void);
         Ice(Ice const &copy);
         Ice&    operator=(Ice const &leftOperand);
-        ~Ice(void);
+        virtual ~Ice(void);
 
         virtual AMateria*       clone(void) const;
         virtual void            use(ICharacter& target);

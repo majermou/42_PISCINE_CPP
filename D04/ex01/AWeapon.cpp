@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:12:27 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 21:21:46 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:25:29 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ AWeapon::AWeapon(AWeapon const & copy)
     *this = copy;
 }
 
-AWeapon&    AWeapon::operator=(AWeapon const & leftOperand) 
+AWeapon&    AWeapon::operator=(AWeapon const & rightOperand) 
 {
-    if (this != &leftOperand)
+    if (this != &rightOperand)
     {
-        Name = leftOperand.getName();
-        Damage = leftOperand.getDamage();
-        APcost = leftOperand.getAPCost();
+        Name = rightOperand.getName();
+        Damage = rightOperand.getDamage();
+        APcost = rightOperand.getAPCost();
     }
     return *this;
 }

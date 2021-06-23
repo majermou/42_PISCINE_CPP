@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   Test.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 15:31:59 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 11:55:47 by majermou         ###   ########.fr       */
+/*   Created: 2021/06/23 10:49:11 by majermou          #+#    #+#             */
+/*   Updated: 2021/06/23 11:51:08 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_HPP
-#define POWERFIST_HPP
+#ifndef TEST_HPP
+#define TEST_HPP
 
-#include "AWeapon.hpp"
+#include "Victim.hpp"
 
-class PowerFist: public AWeapon
+class Test: public Victim
 {
-
     public:
 
-        PowerFist(void);
-        PowerFist(PowerFist const & copy);
-        PowerFist&    operator=(PowerFist const & leftOperand);
-        virtual ~PowerFist(void);
+        Test(void);
+        Test(std::string name);
+        Test(Test const &copy);
+        Test&   operator=(Test const &rightOperand);
+        virtual ~Test(void);
 
-        void attack(void) const;
+        void            getPolymorphed(void) const;
+
 };
 
 #endif

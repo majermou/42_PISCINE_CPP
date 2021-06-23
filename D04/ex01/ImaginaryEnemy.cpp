@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperMutant.cpp                                    :+:      :+:    :+:   */
+/*   ImaginaryEnemy.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 15:59:34 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 11:35:38 by majermou         ###   ########.fr       */
+/*   Created: 2021/06/23 11:56:37 by majermou          #+#    #+#             */
+/*   Updated: 2021/06/23 12:04:33 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SuperMutant.hpp"
+#include "ImaginaryEnemy.hpp"
 
-SuperMutant::SuperMutant(void): Enemy(170, "Super Mutant")
+ImaginaryEnemy::ImaginaryEnemy(void): Enemy(20, "Imaginary Enemy")
 {
-    std::cout << "Gaaah. Me want smash heads!" << std::endl;
+    std::cout << "Hi I am the ImaginaryEnemy!" << std::endl;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &copy): Enemy(copy)
+ImaginaryEnemy::ImaginaryEnemy(ImaginaryEnemy const &copy): Enemy(copy)
 {
 }
 
-SuperMutant&  SuperMutant::operator=(SuperMutant const &rightOperand)
+ImaginaryEnemy&  ImaginaryEnemy::operator=(ImaginaryEnemy const &rightOperand)
 {
     if (this != &rightOperand)
     {
@@ -30,12 +30,12 @@ SuperMutant&  SuperMutant::operator=(SuperMutant const &rightOperand)
     return *this;
 }
 
-SuperMutant::~SuperMutant()
+ImaginaryEnemy::~ImaginaryEnemy()
 {
-    std::cout << "Aaargh..." << std::endl;
+    std::cout << "You got me {***}" << std::endl;
 }
 
-void    SuperMutant::takeDamage(int damage)
+void    ImaginaryEnemy::takeDamage(int damage)
 {
     if (damage > 0 && HP > 0)
     {

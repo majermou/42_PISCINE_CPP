@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:37:04 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 21:23:52 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:33:10 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Enemy::Enemy(Enemy const &copy)
     *this = copy;
 }
 
-Enemy&  Enemy::operator=(Enemy const &leftOperand)
+Enemy&  Enemy::operator=(Enemy const &rightOperand)
 {
-    if (this != &leftOperand)
+    if (this != &rightOperand)
     {
-        HP = leftOperand.getHP();
-        Type = leftOperand.getType();
+        HP = rightOperand.getHP();
+        Type = rightOperand.getType();
     }
     return *this;
 }
@@ -47,7 +47,7 @@ std::string     Enemy::getType() const
 
 void    Enemy::takeDamage(int damage)
 {
-    if (damage > 0)
+    if (damage > 0 && HP > 0)
     {
         if (HP - damage > 0)
             HP -= damage;

@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 14:15:17 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/19 16:29:55 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:40:39 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Victim::Victim(std::string name): _name(name)
 
 Victim::Victim(Victim const &copy)
 {
-    std::cout << "Victim Copy Constructer Called." << std::endl;
     *this = copy;
 }
 
@@ -30,10 +29,9 @@ Victim::~Victim(void)
 
 Victim&   Victim::operator=(Victim const &rightOperand)
 {
-    std::cout << "Victim Assignement Overloaded Operation Called." << std::endl;
     if (this != &rightOperand)
     {
-        this->_name = rightOperand.getName();
+        _name = rightOperand.getName();
     }
     return *this;
 }

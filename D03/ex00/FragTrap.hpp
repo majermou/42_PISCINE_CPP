@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:52:30 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/16 17:42:31 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/22 09:54:27 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class FragTrap
         int const           max_hit_points;
         int const           melee_attack_damage;
         int const           ranged_attack_damage;
-        int const           armor_damage_reduction;
+        int const           armor_damage_reduction = 5;
 
 };
 

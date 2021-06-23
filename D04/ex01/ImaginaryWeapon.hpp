@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.hpp                                      :+:      :+:    :+:   */
+/*   ImaginaryWeapon.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/21 15:31:59 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 11:55:47 by majermou         ###   ########.fr       */
+/*   Created: 2021/06/23 11:53:15 by majermou          #+#    #+#             */
+/*   Updated: 2021/06/23 11:54:18 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIST_HPP
-#define POWERFIST_HPP
+#ifndef IMAGINARYWEAPON_HPP
+#define IMAGINARYWEAPON_HPP
 
 #include "AWeapon.hpp"
 
-class PowerFist: public AWeapon
+class ImaginaryWeapon: public AWeapon
 {
 
     public:
 
-        PowerFist(void);
-        PowerFist(PowerFist const & copy);
-        PowerFist&    operator=(PowerFist const & leftOperand);
-        virtual ~PowerFist(void);
+        ImaginaryWeapon(void);
+        ImaginaryWeapon(ImaginaryWeapon const & copy);
+        ImaginaryWeapon&    operator=(ImaginaryWeapon const & leftOperand);
+        virtual ~ImaginaryWeapon(void);
 
         void attack(void) const;
 };

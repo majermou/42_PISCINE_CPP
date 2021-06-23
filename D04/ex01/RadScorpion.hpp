@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 16:03:28 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/21 18:31:46 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:59:09 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class RadScorpion: public Enemy
         RadScorpion(void);
         RadScorpion(RadScorpion const &copy);
         RadScorpion&  operator=(RadScorpion const &leftOperand);
-        ~RadScorpion();
+        virtual ~RadScorpion(void);
 
-        virtual void takeDamage(int damage);
+        void takeDamage(int damage);
 };
 
 #endif

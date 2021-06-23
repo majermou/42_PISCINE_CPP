@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 14:15:20 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/19 16:19:43 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:59:15 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ class Victim
 
     public:
 
-        Victim();
+        Victim(void);
         Victim(std::string name);
         Victim(Victim const &copy);
         Victim&   operator=(Victim const &rightOperand);
-        ~Victim();
+        virtual ~Victim(void);
 
         std::string     getName(void) const;
         std::string     getTitle(void) const;
-        void            getPolymorphed(void) const;
+        virtual void            getPolymorphed(void) const;
 
     protected:
 

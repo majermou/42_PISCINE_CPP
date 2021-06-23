@@ -6,78 +6,91 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:23:16 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 12:24:51 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:21:42 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 
-Squad::Squad(void): numUnits(0), Units(NULL)
+Squad::Squad(void): Units(NULL), numUnits(0)
 {
 }
 
-Squad::Squad(Squad const &copy)
+Squad::Squad(Squad &copy)
 {
+    clean();
     *this = copy;
 }
 
-Squad&  Squad::operator=(Squad const &leftOperand)
+Squad &Squad::operator=(Squad &rightOperand)
 {
-    if (this != &leftOperand)
+    int     i = 0;
+    
+    clean();
+    if (this != &rightOperand)
     {
-        numUnits = leftOperand.getCount();
-        Units = leftOperand.getUnits();
+        numUnits = rightOperand.getCount();
+        Units = new ISpaceMarine *[rightOperand.getCount() + 1];
+        while (rightOperand.getUnit(i))
+        {
+            Units[i] = rightOperand.getUnit(i);
+            i++;
+        }
+        Units[i] = NULL;
     }
     return *this;
 }
 
 Squad::~Squad(void)
-{  
-    if (Units)
-    { 
-        for (size_t i = 0; Units[i]; i++)
-        {
-            delete Units[i];
-        }
-        delete [] Units;
-    }
-    
-}
-
-ISpaceMarine**      Squad::getUnits(void) const
 {
-    return Units;
+    clean();
 }
 
-int             Squad::getCount(void) const
+void    Squad::clean(void)
+{
+    int i = 0;
+
+    while (Units && Units[i])
+    {
+        delete Units[i];
+        Units[i] = NULL;
+        i++;
+    }
+    delete[] Units;
+    Units = NULL;
+}
+
+int Squad::getCount(void) const
 {
     return numUnits;
 }
 
-ISpaceMarine*   Squad::getUnit(int N) const
+ISpaceMarine *Squad::getUnit(int Idx) const
 {
-    if (Units && N + 1 <= numUnits)
+    if (Units && Idx + 1 <= numUnits)
     {
-        return Units[N];
+        return Units[Idx];
     }
     else
         return NULL;
 }
 
-int             Squad::push(ISpaceMarine* obj)
+int Squad::push(ISpaceMarine *obj)
 {
+    int i = 0;
+    ISpaceMarine **tmp = NULL;
+
     if (obj)
     {
-        if (Units)
+        while (Units && Units[i])
         {
-            for (size_t i = 0; Units[i]; i++)
-            {
-                if (obj == Units[i])
-                    return numUnits;
-            }
+
+            if (obj == Units[i])
+                return numUnits;
+            i++;
         }
-        ISpaceMarine    **tmp = new ISpaceMarine*[numUnits + 2];
-        int             i = 0;
+        tmp = new ISpaceMarine *[numUnits + 2];
+        i = 0;
         while (Units && Units[i])
         {
             tmp[i] = Units[i];
@@ -85,8 +98,6 @@ int             Squad::push(ISpaceMarine* obj)
         }
         tmp[i++] = obj;
         tmp[i] = NULL;
-        if (Units)
-            delete [] Units;
         Units = tmp;
         numUnits += 1;
     }

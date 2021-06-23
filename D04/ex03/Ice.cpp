@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 14:54:17 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/22 18:33:43 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/23 15:18:16 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ Ice::~Ice(void)
 Ice&    Ice::operator=(Ice const &leftOperand)
 {
     if (this != &leftOperand)
-    {
         AMateria::operator=(leftOperand);
-    }
     return *this;
 }
 

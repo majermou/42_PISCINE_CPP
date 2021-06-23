@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 11:53:46 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/17 17:04:47 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:04:31 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "NinjaTrap.hpp"
 
-class SuperTrap: public NinjaTrap, public FragTrap
+class SuperTrap:  public NinjaTrap, public FragTrap
 {
     
     public:
@@ -28,6 +28,17 @@ class SuperTrap: public NinjaTrap, public FragTrap
 
         // void            rangedAttack(std::string const & target);
         // void            meleeAttack(std::string const & target);
+
+    private:
+
+        int hit_points = FragTrap::hit_points;
+        int energy_points = NinjaTrap::energy_points;
+        int level = 1;
+        int max_energy_points = NinjaTrap::max_energy_points;
+        int max_hit_points = FragTrap::max_hit_points;
+        int melee_attack_damage = NinjaTrap::melee_attack_damage;
+        int ranged_attack_damage = FragTrap::ranged_attack_damage;
+        int armor_damage_reduction = FragTrap::armor_damage_reduction;
 };
 
 #endif
