@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:14:48 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 18:20:46 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/24 09:11:31 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class Squad: public ISquad
         virtual int             getCount(void) const;
         virtual ISpaceMarine*   getUnit(int Idx) const;
         virtual int             push(ISpaceMarine* obj);
-
-        
 
     private:
 

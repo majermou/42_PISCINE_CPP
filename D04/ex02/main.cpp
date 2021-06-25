@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:04:43 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 18:23:01 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/24 09:12:56 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
     vlc->push(bob);
     vlc->push(jim);
     vlc->push(bob);
-
+    
     ptr->push(Zack);
     ptr->push(lol);
     std::cout << "len = " << vlc->getCount() << "\n";
@@ -52,7 +52,7 @@ int main()
         cur->rangedAttack();
         cur->meleeAttack();
     }
-    
+
     std::cout << std::endl;
     
     delete vlc;

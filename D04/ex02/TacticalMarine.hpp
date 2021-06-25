@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 10:45:47 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 12:19:43 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/24 09:11:15 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class TacticalMarine: public ISpaceMarine
         virtual void battleCry() const;
         virtual void rangedAttack() const;
         virtual void meleeAttack() const;
-
 };
 
 #endif
