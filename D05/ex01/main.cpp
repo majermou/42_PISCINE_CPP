@@ -5,28 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 11:28:21 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/25 15:25:28 by majermou         ###   ########.fr       */
+/*   Created: 2021/06/26 13:27:42 by majermou          #+#    #+#             */
+/*   Updated: 2021/06/26 15:17:18 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int main(void)
 {
+    Bureaucrat  bureaucrat0("Satoshi", 1);
+    Bureaucrat  bureaucrat1("Nick", 56);
+    Bureaucrat  bureaucrat2("Tim", 8);
+    Form        formX("X", 7, 10);
+    Form        formY("Y", 10, 10);
+    Form        formZ("Z", 2, 10);
+    
+    
     try
     {
-        Bureaucrat  bureaucrat0("Adi", 1);
-        Bureaucrat  bureaucrat1("Alex", 56);
-        Form        formX("X", 5, 6);
-        Form        formY("Y", 5, 6);
+        std::cout << formX;
+
+        bureaucrat2.signForm(formX);
 
         std::cout << formX;
 
-        bureaucrat0.signForm(formX);
-
+        formX.beSigned(bureaucrat2);
+        
         std::cout << formX;
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    try
+    {
+
+        std::cout << formY;
+
+        bureaucrat1.signForm(formY);
 
         std::cout << formY;
 
@@ -37,9 +59,20 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
-    
 
+    std::cout << std::endl;
+
+    bureaucrat0.signForm(formX);
+    bureaucrat0.signForm(formY);
+    bureaucrat0.signForm(formZ);
+
+    std::cout << std::endl;
+
+    std::cout << formX;
+    std::cout << formY;
+    std::cout << formZ;
+    
     return 0;
 }

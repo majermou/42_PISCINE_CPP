@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 10:18:28 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/25 15:09:05 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/26 14:52:13 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,15 @@ class Bureaucrat
     {
         public:
         
-            virtual const char* what() const throw();
+            virtual const char* what(void) const throw();
+
     };
     
     class GradeTooLowException: public std::exception
     {
         public:
         
-            virtual const char* what() const throw();
+            virtual const char* what(void) const throw();
     };
 
     private:

@@ -5,17 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/25 11:28:21 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/25 12:55:46 by majermou         ###   ########.fr       */
+/*   Created: 2021/06/26 13:27:42 by majermou          #+#    #+#             */
+/*   Updated: 2021/06/26 14:12:15 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
 int main(void)
 {
 
-    std::cout << "Testing exception thrwoing at Constructer call" << std::endl;
+    std::cout   << "\033[0;36mTesting exception thrwoing at Constructer call <GradeTooLow>\033[0m"
+                << std::endl << std::endl;
     
     try
     {
@@ -23,20 +24,23 @@ int main(void)
     }
     catch(std::exception & e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
+    std::cout   << std::endl << "\033[0;36mTesting exception thrwoing at Constructer call <GradeTooHigh>\033[0m"
+                << std::endl << std::endl;
     
     try
     {
-        Bureaucrat b("name",-5);
+        Bureaucrat b("name", 0);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     
-    std::cout << "Testing exception thrwoing at call to increment()" << std::endl;
+    std::cout   << std::endl << "\033[0;36mTesting exception thrwoing at call to increment()\033[0m"
+                << std::endl << std::endl;
 
     try
     {
@@ -46,10 +50,11 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "Testing exception thrwoing at call to increment()" << std::endl;
+    std::cout   << std::endl << "\033[0;36mTesting exception thrwoing at call to decrement()\033[0m"
+                << std::endl << std::endl;
 
     try
     {
@@ -59,7 +64,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;

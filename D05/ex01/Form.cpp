@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:01:14 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/25 15:24:08 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:18:54 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,38 +63,34 @@ int             Form::getGradeToexecute(void) const
     return _gradToexecute;
 }
 
-bool            Form::beSigned(Bureaucrat &bureaucrat)
+void            Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (this->getFormStatus() == false)
+    if (!this->getFormStatus())
     {
         if (bureaucrat.getGrade() <= _gradTosign)
-        {
             ISsigned = true;
-            return true;
-        }
         else
             throw Form::GradeTooLowException();
     }
     else
         std::cout << "Form Already Signed!" << std::endl;
-    return false;
 }
 
 std::ostream&    operator<<(std::ostream &out, Form &obj)
 {
-    if (obj.getFormStatus() == true)
-        out << "This Form is Signed."<< std::endl;
+    if (obj.getFormStatus())
+        out << "Form " << obj.getName() << " is Signed."<< std::endl;
     else
-        out << "This Form isn't Signed yet."<< std::endl;
+        out << "Form "  << obj.getName() << " is not Signed yet."<< std::endl;
     return out;
 }
 
 const char* Form::GradeTooHighException::what(void) const throw()
 {
-    return "Grade is too high!!!";
+    return "\033[0;31mGrade is too high!!!\033[0m";
 }
 
 const char* Form::GradeTooLowException::what(void) const throw()
 {
-    return "Grade is too low!!!";
+    return "\033[0;31mGrade is too low!!!\033[0m";
 }
