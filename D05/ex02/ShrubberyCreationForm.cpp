@@ -6,19 +6,17 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 15:56:57 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 19:47:46 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 09:44:30 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target):  Form("PresidentialPardonForm", 145, 137), _target(target), _name("ShrubberyCreationForm"),
-                                                                    _gradTosign(145), _gradToexecute(137),
-                                                                    ISsigned(false)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("PresidentialPardonForm", 145, 137, target)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src): Form(src), _gradTosign(src.getGradeTosign()), _gradToexecute(src.getGradeToexecute())
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src): Form(src)
 {
 }
 
@@ -39,7 +37,7 @@ void    ShrubberyCreationForm::Action(void) const
 {
     std::ofstream   ofs;
 
-    ofs.open(_target + "_shrubbery");
+    ofs.open(getTarget() + "_shrubbery");
 
     for (size_t i = 0; i < 4; i++)
     {
@@ -108,39 +106,4 @@ void    ShrubberyCreationForm::Action(void) const
     }
     ofs << std::endl << std::endl << std::endl << std::endl;
     ofs.close();
-}
-
-
-std::ostream&    operator<<(std::ostream &out, ShrubberyCreationForm &obj)
-{
-    if (obj.getFormStatus() == true)
-        out << "Form ~{" << obj.getName() << "}~ is Signed." << std::endl;
-    else
-        out << "Form ~{" << obj.getName() << "}~ is not Signed yet." << std::endl;
-    return out;
-}
-
-std::string     ShrubberyCreationForm::getName(void) const
-{
-    return _name;
-}
-
-bool            ShrubberyCreationForm::getFormStatus(void) const
-{
-    return ISsigned;
-}
-
-int             ShrubberyCreationForm::getGradeTosign(void) const
-{
-    return _gradTosign;
-}
-
-int             ShrubberyCreationForm::getGradeToexecute(void) const
-{
-    return _gradToexecute;
-}
-
-void            ShrubberyCreationForm::setFormStatus(void)
-{
-    ISsigned = true;
 }

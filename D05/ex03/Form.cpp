@@ -6,18 +6,16 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:01:14 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 19:49:02 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 09:50:16 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _name("Form"), _gradTosign(6), _gradToexecute(100), ISsigned(false)
-{
-}
-
-Form::Form(std::string name, int gradeTosign, int gradeToexecute):   _name(name), _gradTosign(gradeTosign),
-                                                                    _gradToexecute(gradeToexecute), ISsigned(false)
+Form::Form(std::string name, int gradeTosign, int gradeToexecute, std::string target):  _target(target), _name(name), 
+                                                                                        _gradTosign(gradeTosign),
+                                                                                        _gradToexecute(gradeToexecute),
+                                                                                        ISsigned(false)
 {
     if (gradeToexecute < 1 || gradeTosign < 1)
         throw Form::GradeTooHighException();
@@ -41,6 +39,11 @@ Form&   Form::operator=(Form const &rfs)
 
 Form::~Form(void)
 {
+}
+
+std::string     Form::getTarget(void) const
+{
+    return _target;
 }
 
 std::string     Form::getName(void) const
@@ -68,7 +71,7 @@ void            Form::beSigned(Bureaucrat &bureaucrat)
     if (!this->getFormStatus())
     {
         if (bureaucrat.getGrade() <= this->getGradeTosign())
-            setFormStatus();
+            ISsigned = true;
         else
             throw Form::GradeTooLowException();
     }

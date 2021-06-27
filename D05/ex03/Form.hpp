@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 13:48:47 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 19:41:33 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 11:01:56 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@ class Form
     public:
 
         Form(void);
-        Form(std::string name, int gradTosign, int gradeToexecute);
+        Form(std::string name, int gradTosign, int gradeToexecute, std::string target);
         Form(Form const &src);
         Form&   operator=(Form const &rfs);
         virtual ~Form(void);
 
-        virtual std::string     getName(void) const;
-        virtual bool            getFormStatus(void) const;
-        virtual int             getGradeTosign(void) const;
-        virtual int             getGradeToexecute(void) const;
+        std::string     getTarget(void) const;
+        std::string     getName(void) const;
+        bool            getFormStatus(void) const;
+        int             getGradeTosign(void) const;
+        int             getGradeToexecute(void) const;
 
-        void            beSigned(Bureaucrat &bureaucrat);
-        void            execute(Bureaucrat const & executor) const;
+        virtual void    beSigned(Bureaucrat &bureaucrat);
+        virtual void    execute(Bureaucrat const & executor) const;
         virtual void    Action(void) const = 0;
-        virtual void    setFormStatus(void) = 0;
 
         class GradeTooHighException: public std::exception
         {
@@ -56,6 +56,7 @@ class Form
 
     private:
 
+        std::string         _target;
         std::string const   _name;
         int const           _gradTosign;
         int const           _gradToexecute;

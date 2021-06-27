@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 11:16:17 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 15:16:16 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 11:42:34 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void    Bureaucrat::signForm(Form &form)
     if (_grade > form.getGradeTosign())
         std::cout   << _name << " cannot sign " << form.getName() 
                     << " cause he doesn't have the required Grade." << std::endl;
-    else if (form.getFormStatus())
+    else if (form.getFormStatus() == true)
          std::cout  << _name << " cannot sign " << form.getName() 
                     << " cause it's already signed." << std::endl;
     else

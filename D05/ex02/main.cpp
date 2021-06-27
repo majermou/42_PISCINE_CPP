@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 13:27:42 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 19:53:42 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 11:48:20 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 int main(void)
 {
     Bureaucrat  bureaucrat0("Satoshi", 1);
-    Bureaucrat  bureaucrat1("Tim", 10);
     Bureaucrat  bureaucrat2("Dogogo", 100);
     
     ShrubberyCreationForm form0("Home");

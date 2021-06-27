@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:01:14 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 15:18:54 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 11:39:45 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void            Form::beSigned(Bureaucrat &bureaucrat)
 
 std::ostream&    operator<<(std::ostream &out, Form &obj)
 {
-    if (obj.getFormStatus())
+    if (obj.getFormStatus() == true)
         out << "Form " << obj.getName() << " is Signed."<< std::endl;
     else
         out << "Form "  << obj.getName() << " is not Signed yet."<< std::endl;

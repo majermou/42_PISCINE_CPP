@@ -6,11 +6,11 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 13:27:42 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/26 14:12:15 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 11:35:23 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 
 int main(void)
 {
