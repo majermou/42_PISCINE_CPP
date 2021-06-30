@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 14:01:14 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/27 11:45:42 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/27 14:36:53 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ const char* Form::GradeTooLowException::what(void) const throw()
 
 void            Form::execute(Bureaucrat const & executor) const
 {
-    if (_gradToexecute < executor.getGrade())
+    if (_gradToexecute >= executor.getGrade())
         throw std::runtime_error("\033[0;31mForm cannot be executed because The bureaucrat isn't superior enough.\033[0m");
     else if (getFormStatus() == false)
         throw std::runtime_error("\033[0;31mForm cannot be executed because it is not signed.\033[0m");

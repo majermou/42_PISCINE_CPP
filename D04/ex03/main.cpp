@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 17:02:07 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 18:18:20 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/30 11:22:50 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(void)
     tmp = src->createMateria("cure");
     me->equip(tmp);
 
+
     me->use(0, *him);
     
     Character* bob = new Character("bob");
@@ -44,6 +45,7 @@ int main(void)
     delete bob;
     delete me;
     delete src;
+    delete alex;
 
     return 0;
 }

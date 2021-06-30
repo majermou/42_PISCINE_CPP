@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:04:43 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/24 09:12:56 by majermou         ###   ########.fr       */
+/*   Updated: 2021/06/28 19:45:41 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,16 @@ int main()
     ISpaceMarine* lol = new TacticalMarine;
     ISpaceMarine* Zack = new AssaultTerminator;
     
-    Squad* vlc = new Squad;
-    Squad* ptr = new Squad;
+    ISquad* vlc = new Squad;
+    ISquad* ptr = new Squad;
     
     vlc->push(bob);
     vlc->push(jim);
     vlc->push(bob);
     
-    ptr->push(Zack);
+    // ptr->push(bob);
     ptr->push(lol);
+    // ptr->push(jim);
     std::cout << "len = " << vlc->getCount() << "\n";
     for (int i = 0; i < vlc->getCount(); ++i)
     {
