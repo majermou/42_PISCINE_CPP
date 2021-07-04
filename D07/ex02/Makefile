@@ -6,7 +6,7 @@
 #    By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/30 16:48:28 by majermou          #+#    #+#              #
-#    Updated: 2021/06/30 16:48:31 by majermou         ###   ########.fr        #
+#    Updated: 2021/07/02 11:45:01 by majermou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ${NAME}:${OBJECTS}
 		@${CC} $< -o $@
 		@echo "\033[0;32m\n--->  Exe Successfully Created.\n\033[0m"
 
-%.o: %.cpp
+%.o: %.cpp Array.hpp
 		@${CC} ${flags} -c $< -o $@
 
 clean:

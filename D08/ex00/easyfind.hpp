@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 15:29:20 by majermou          #+#    #+#             */
-/*   Updated: 2021/07/02 10:49:45 by majermou         ###   ########.fr       */
+/*   Created: 2021/07/01 16:21:54 by majermou          #+#    #+#             */
+/*   Updated: 2021/07/04 12:32:06 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
+#include <stdexcept>
+#include <algorithm>
 
 template <typename T>
-void    swap(T &value1, T &value2)
+typename T::iterator easyfind(T& cont, int val)
 {
-    T   tmp(value1);
-
-    value1 = value2;
-    value2 = tmp;
-}
-
-template <typename T>
-T const max(T const value1, T const value2)
-{
-    return (value1 > value2 ? value1 : value2);
-}
-
-template <typename T>
-T const min(T const value1, T const value2)
-{
-    return (value1 >= value2 ? value2 : value1);
+    typename T::iterator it;
+    it = std::find(cont.begin(), cont.end(), val);
+    if (it == cont.end())
+        throw std::runtime_error("\033[0;31mError: element not found!!!\033[0m");
+    return it;
 }
 
 #endif

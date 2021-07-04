@@ -6,7 +6,7 @@
 /*   By: majermou <majermou@students.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 18:27:25 by majermou          #+#    #+#             */
-/*   Updated: 2021/06/23 15:58:59 by majermou         ###   ########.fr       */
+/*   Updated: 2021/07/01 14:02:30 by majermou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
     me->attack(b);
     std::cout << *me;
     me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
